@@ -124,6 +124,13 @@ std::promise is also a class template and its object promises to set the value i
 
 ## std::async Tutorial & Example
 
+    std::launch::async
+        It guarantees the asynchronous behaviour i.e. passed function will be executed in seperate thread.
+    std::launch::deferred
+        Non asynchronous behaviour i.e. Function will be called when other thread will call get() on future to access the shared state.
+    std::launch::async | std::launch::deferred
+        Its the default behaviour. With this launch policy it can run asynchronously or not depending on the load on system. But we have no control over it.
+
 [cpp11NotesSample](https://www.artima.com/samples/cpp11NotesSample.pdf)
 
 ## Input/Output(iostream, fstream)
