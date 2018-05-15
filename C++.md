@@ -225,4 +225,3 @@ Make sure that objects own resources. This principle is also known as “resourc
 ## chrono
 
 time/calander
-
