@@ -28,6 +28,10 @@
     - cin.peek()
     - cin.ignore(unsigned int n = 1, int delim = EOF):
 
+1. string literal
+
+    u8/u/U/R raw string
+
 ## [CPP containers](http://en.cppreference.com/w/cpp/container)
 
 1. sequence containers
@@ -169,11 +173,13 @@ sort(begin(v), end(v))
 sort(begin(a), end(a))
 ```
 
-## Lambda functions and expressions
+## [Lambda functions and expressions](https://solarianprogrammer.com/2011/11/01/cpp-11-lambda-tutorial/)
 
-``` cpp0
+``` cpp
 [](int x, int y) -> int { return x + y;}
 ```
+
+## [C++14 auto type lambda functions](https://solarianprogrammer.com/2014/08/28/cpp-14-lambda-tutorial/)
 
 ## Uniform Initialization and Initializer Lists
 
@@ -219,3 +225,4 @@ Make sure that objects own resources. This principle is also known as “resourc
 ## chrono
 
 time/calander
+
