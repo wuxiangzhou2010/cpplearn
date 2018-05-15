@@ -2,7 +2,7 @@
 
 ## [characters and strings](https://www.ntu.edu.sg/home/ehchua/programming/cpp/cp9_String.html)
 
-1. cctype
+1. ctype
 
     `isdigit` `isalpha` `isupper` `islower`
 
