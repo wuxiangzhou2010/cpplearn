@@ -3,7 +3,7 @@
 ## lexial_cast
 
 ```cpp
-lexial_cast<string>('34.5)
+lexial_cast<string>('34.5')
 lexial_cast<array<char, 64>>(23)
 s= lexial_cast<int>("3456")
 try {
@@ -49,3 +49,5 @@ cpp_dec_float_50
 ## datetime
 
 ## smart pointer
+
+- [The Boost C++ Libraries](https://theboostcpplibraries.com/)
