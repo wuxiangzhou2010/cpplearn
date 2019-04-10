@@ -4,24 +4,24 @@
 using namespace std;
 Coordinate::Coordinate()
 {
+    std::cout << "Coordinate::Coordinate()" << std::endl;
 }
+
 Coordinate::Coordinate(int x, int y)
 {
+    std::cout << "Coordinate::Coordinate(int x, int y)" << std::endl;
     m_iX = x;
     m_iY = y;
 }
-Coordinate::~Coordinate()
-{
-}
+Coordinate::~Coordinate() {}
 int Coordinate::getX()
 {
-
-    cout << "getX()" << endl;
+    cout << "getX()";
     return m_iX;
 }
 int Coordinate::getY()
 {
-    cout << "getY()" << endl;
+    cout << "getY()";
     return m_iY;
 }
 /*
@@ -68,4 +68,11 @@ int Coordinate::operator[](int index)
         return m_iX;
     if (1 == index)
         return m_iY;
+}
+
+Coordinate::Coordinate(const Coordinate &_coor)
+{
+    m_iX = _coor.m_iX;
+    m_iY = _coor.m_iY;
+    std::cout << "Coordinate(const Coordinate &)" << std::endl;
 }
