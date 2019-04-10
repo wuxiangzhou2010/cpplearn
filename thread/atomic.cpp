@@ -1,4 +1,8 @@
-// atomic::exchange example
+/* atomic::exchange example
+ 1. atomic.load()   Read contained value
+ 2. atomic.store()   Replaces the contained value with val.
+ 3. atomic.exchange() Replaces the contained value by val and returns the value it had immediately before.
+*/
 #include <iostream> // std::cout
 #include <atomic>   // std::atomic
 #include <thread>   // std::thread
