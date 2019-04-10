@@ -2,23 +2,26 @@
 #include "coordinate.h"
 
 using namespace std;
-Coordinate::Coordinate(){
-    
+Coordinate::Coordinate()
+{
 }
-Coordinate::Coordinate(int x, int y){
+Coordinate::Coordinate(int x, int y)
+{
     m_iX = x;
     m_iY = y;
 }
-Coordinate::~Coordinate(){
-    
+Coordinate::~Coordinate()
+{
 }
-int Coordinate::getX(){
+int Coordinate::getX()
+{
 
-    cout << "getX()" <<endl;
+    cout << "getX()" << endl;
     return m_iX;
 }
-int Coordinate::getY(){
-    cout << "getY()" <<endl;
+int Coordinate::getY()
+{
+    cout << "getY()" << endl;
     return m_iY;
 }
 /*
@@ -29,14 +32,15 @@ Coordinate& Coordinate::operator-(){
 }
 */
 
-Coordinate& Coordinate::operator++(){
+Coordinate &Coordinate::operator++()
+{
     ++m_iX;
     ++m_iY;
     return *this;
 }
 
-
-Coordinate Coordinate::operator++(int){
+Coordinate Coordinate::operator++(int)
+{
     Coordinate old(*this);
     this->m_iX++;
     this->m_iY++;
@@ -52,14 +56,16 @@ Coordinate Coordinate::operator+(const Coordinate& coor){
 
 */
 
-
-ostream& operator<<(ostream& out, const Coordinate& coor){
+ostream &operator<<(ostream &out, const Coordinate &coor)
+{
     out << coor.m_iX << "," << coor.m_iY;
     return out;
 }
 
-
-int Coordinate::operator[](int index){
-    if(0 == index) return m_iX;
-    if(1 == index) return m_iY;
+int Coordinate::operator[](int index)
+{
+    if (0 == index)
+        return m_iX;
+    if (1 == index)
+        return m_iY;
 }
