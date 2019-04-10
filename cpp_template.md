@@ -2,18 +2,19 @@
 
 ## 友元函数和友元类
 
-全局友元函数
-类内友元函数
-note: 定向暴露， 不建议使用， 不符合封装性
+- 全局友元函数
+- 类内友元函数
+
+  note: 定向暴露，不建议使用，不符合封装性
 
 ## static
 
-静态成员和静态成员函数不属于实例， 而属于类， 没有this指针
+静态成员和静态成员函数不属于实例， 而属于类， 没有 this 指针
 
 - 静态数据成员必须在类外单独初始化， 不能够写到构造函数中去
 - 不能调用非静态成员函数和非静态数据成员
 - 静态数据成员只有一份，不依赖对象而存在， 不占用对象空间
-- 静态成员函数不能用const 修饰， 因为constant本身修饰的是this指针， 对静态函数而言， 不传入this指针
+- 静态成员函数不能用 const 修饰， 因为 constant 本身修饰的是 this 指针， 对静态函数而言， 不传入 this 指针
 
 ## 运算符重载
 
@@ -22,11 +23,11 @@ note: 定向暴露， 不建议使用， 不符合封装性
 
 一元运算符重载：常用`-` `++`
 负号的重载：
-    友元函数重载
-    成员函数重载
+友元函数重载
+成员函数重载
 eg:
 
-``` txt
+```txt
 成员函数重载 return *this
 Coordinate& Coordinate::operator-()
 # 调用的时候相当于调用重载函数
@@ -34,7 +35,7 @@ Coordinate coor1;
 -coor1; // coor1.operator-();
 ```
 
-友元函数重载 return *this
+友元函数重载 `return *this`
 
 ```cpp
 frend Coordinate& operator-(Coordinate &coor)
@@ -94,7 +95,7 @@ cout << coor; //operator<<(cout, coor);
 
 索引运算符, `必须使用成员函数重载， 因为必须有this 指针`
 
-``` cpp
+```cpp
 int operator[](int index){
     if(0 == index）{
         return m_iX;
@@ -154,7 +155,7 @@ display<10>();
 
 多个参数
 
-``` cpp
+```cpp
 template <typename T, typename C>
 void display(T a, C b){
     cout << a << b << endl;
