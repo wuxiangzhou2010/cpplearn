@@ -1,18 +1,24 @@
-#ifndef __WORKER_H__
-#define __WORKER_H__
-#include <string>
-#include "person.h"
-using namespace std;
+//
+// Created by wuxiang on 4/10/2019.
+//
 
-class Worker:private Person{
-public:
+#ifndef TEST_WORKER_H
+#define TEST_WORKER_H
+
+#include "person.h"
+
+class Worker : private Person
+{
+
+  public:
     Worker();
     Worker(const Worker &);
     ~Worker();
     int getSalary();
     void work(int _salary);
 
-private:
+  private:
     int m_iSalary;
 };
-#endif
+
+#endif //TEST_WORKER_H
