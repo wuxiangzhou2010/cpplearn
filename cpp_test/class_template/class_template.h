@@ -1,33 +1,38 @@
 #include <iostream>
 
+// 演示模板类的使用
 using namespace std;
 
 template <typename T, int kSize, int kVal>
-class MyArray{
-    public:
+class MyArray
+{
+  public:
     MyArray();
-    ~MyArray(){
+    ~MyArray()
+    {
         delete[] m_pArr;
         m_pArr = NULL;
     }
     void display();
 
-private:
-    T* m_pArr;
-
+  private:
+    T *m_pArr;
 };
 
-
 template <typename T, int kSize, int kVal>
-MyArray<T, kSize, kVal>::MyArray(){
+MyArray<T, kSize, kVal>::MyArray()
+{
     m_pArr = new T[kSize];
-    for(int i = 0;i < kSize; i++){
+    for (int i = 0; i < kSize; i++)
+    {
         m_pArr[i] = kVal;
     }
 }
 template <typename T, int kSize, int kVal>
-void MyArray<T, kSize, kVal>::display(){
-    for(int i = 0;i < kSize; i++){
+void MyArray<T, kSize, kVal>::display()
+{
+    for (int i = 0; i < kSize; i++)
+    {
         cout << m_pArr[i] << endl;
     }
 }
