@@ -1,4 +1,5 @@
 // mutex example
+// std::cout  临界区资源
 #include <iostream> // std::cout
 #include <thread>   // std::thread
 #include <mutex>    // std::mutex
