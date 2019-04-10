@@ -1,5 +1,5 @@
 #include <iostream>
-// 演示模板的使用
+// 演示模板函数的使用
 using namespace std;
 
 template <typename T>
