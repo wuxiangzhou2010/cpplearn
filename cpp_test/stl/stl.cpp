@@ -2,10 +2,11 @@
 #include <vector>
 #include <list>
 #include <map>
-
+// 演示STL  vector, list， map 的使用
 using namespace std;
 
-int main(void){
+int main(void)
+{
     vector<int> vec;
     vec.push_back(10);
     vec.push_back(4);
@@ -17,8 +18,8 @@ int main(void){
     for(int i= 0;i < vec.size();i++)
     {cout << vec[i]<<endl;}
 */
-   //list
-   /*
+    //list
+    /*
     vector<int>::iterator itor= vec.begin();
     cout <<*itor<<endl;
     for(;itor != vec.end();itor++)
@@ -32,7 +33,7 @@ int main(void){
     list1.push_back(1);
     list1.push_back(4);
     list1.push_back(7);*/
-/* not work
+    /* not work
     for(int i = 0; i<list1.size();i++)
     {
         cout << list1 <<endl;
@@ -54,10 +55,10 @@ int main(void){
     m.insert(p2);
 
     cout << m[3] << endl;
-    cout << m[4] <<endl;
+    cout << m[4] << endl;
     map<int, string>::iterator itor = m.begin();
-    for(;itor != m.end();itor++)
+    for (; itor != m.end(); itor++)
     {
-        cout << (*itor).first << (*itor).second <<endl;
+        cout << (*itor).first << (*itor).second << endl;
     }
 }
