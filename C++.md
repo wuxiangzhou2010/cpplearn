@@ -2,9 +2,26 @@
 
 ## [string](./string.md)
 
-## [STL](./stl/stl.md)
+## time <ctime>
 
-## [Thread(c++11)](./thread/thread.md)
+时间类型
+
+- clock_t
+- time_t
+- size_t
+- tm
+
+## 文件和流
+
+## 动态内存
+
+## 命名空间
+
+## 信号处理
+
+## [模板/STL](./stl/stl.md)
+
+## [多线程 pthread / Thread(c++11)](./thread/thread.md)
 
 ### std::future , std::promise and Returning values from Thread
 
@@ -116,3 +133,7 @@ C++98
 ## chrono
 
 time/calander
+
+reference:
+
+- [cpp-references](http://www.runoob.com/cplusplus/cpp-references.html)
