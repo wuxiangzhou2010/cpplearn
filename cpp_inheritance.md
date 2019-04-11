@@ -50,8 +50,3 @@ class Worker:virtual public Person{};
 class Farmer:virtual public Person{};
 class MigrantWorker:public Worker, public Farmer{};
 ```
-
-- 抽象类 - 接口类
-
-  - 如果类中至少有一个函数被声明为纯虚函数， 则这个类就是抽象类。
-  - 抽象类不能被用于实例化对象， 只能作为接口使用。
