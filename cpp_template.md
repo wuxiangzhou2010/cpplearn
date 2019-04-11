@@ -1,66 +1,107 @@
 # [C++ 远征之模板篇](https://www.imooc.com/learn/477)
 
-## 友元函数和友元类
+## 2-1 友元函数和友元类
 
-- 全局友元函数
-- 类内友元函数
+- 友元函数
 
-  note: 定向暴露，不建议使用，不符合封装性
+  - 友元全局函数
+  - 友元成员函数
 
-## static
+* 友元类
 
-静态成员和静态成员函数不属于实例， 而属于类， 没有 this 指针
+note:
+
+- 友元关系不可传递
+- 友元关系的单向性
+- 友元声明的形式及数量不受限制
+
+note: 定向暴露，不建议使用，不符合封装性
+
+## 3. static
+
+静态成员变量和静态成员函数不属于实例， 而属于类， 没有 this 指针
 
 - 静态数据成员必须在类外单独初始化， 不能够写到构造函数中去
-- 不能调用非静态成员函数和非静态数据成员
+- 静态成员函数不能调用非静态成员函数和非静态数据成员
 - 静态数据成员只有一份，不依赖对象而存在， 不占用对象空间
-- 静态成员函数不能用 const 修饰， 因为 constant 本身修饰的是 this 指针， 对静态函数而言， 不传入 this 指针
+- 静态成员函数不能用 const 修饰， 因为 const 本身修饰的是 this 指针， 对静态函数而言， 不传入 this 指针
 
-## 运算符重载
+## C++中的函数重载
+
+在同一个作用域内，可以声明几个功能类似的同名函数，但是这些同名函数的形式参数（指参数的个数、类型或者顺序）必须不同。
+
+## 4. 运算符重载
+
+- 概念： 给原有运算符赋予新功能
 
 - 本质是函数重载
 - 关键字 operator
 
-一元运算符重载：常用`-` `++`
-负号的重载：
-友元函数重载
-成员函数重载
-eg:
+- 可重载运算符/不可重载运算符
 
-```txt
-成员函数重载 return *this
-Coordinate& Coordinate::operator-()
-# 调用的时候相当于调用重载函数
-Coordinate coor1;
--coor1; // coor1.operator-();
-```
+- 一元运算符重载：常用`-` `++`
 
-友元函数重载 `return *this`
+- `-`负号的重载：
 
-```cpp
-frend Coordinate& operator-(Coordinate &coor)
--coor1; //operator-(coor1);
-```
+  - 成员函数重载
 
-可以类外调用
+    ```cpp
+    //成员函数重载 return *this
+    Coordinate& Coordinate::operator-()
+    {
+        m_iX = -m_iX;
+        m_iY= -m_iY;
+        return *this;
+    }
 
-## ++ 符号重载
+    //调用的时候相当于调用重载函数
+    //Coordinate coor1;
+    //-coor1; // coor1.operator-();
+    ```
 
-前置++
+  - 友元全局函数重载 `return *this`
 
-```cpp
-Coordinate& Coordinate::operator++();
-++coor1; // coor1.operator++();
-```
+    ```cpp
+    //friend Coordinate& operator-(Coordinate &coor)
+    //-coor1; //operator-(coor1);
+    Coordinate& operator-()(Coordinate &coor)
+    {
+        coor.m_iX=-coor.m_iY;
+        coor.m_iY= - coor.m_iY;
+        return *this;
+    }
+    ```
 
-[后置++](https://www.imooc.com/video/9588/0)
+- ++ 符号重载
 
-```cpp
-Coordinate operator++(int) // int 并不是传入的值， 只是一个标记
-coor1++; // coor1.operator++(0);
-```
+  - 前置++
 
-## 二元运算符重载
+    ```cpp
+    // Coordinate& Coordinate::operator++();
+    // ++coor1; // coor1.operator++();
+    Coordinate& Coordinate::operator++()
+    {
+        m_iX++;
+        m_iY++;
+        return *this;
+    }
+    ```
+
+  - [后置++](https://www.imooc.com/video/9588/0)
+
+  ```cpp
+  //Coordinate operator++(int) // int 并不是传入的值， 只是一个标记
+  //coor1++; // coor1.operator++(0);
+  Coordinate operator++(int)
+  {
+      Coordinate old(*this);
+      m_iX++;
+      m_iY++;
+      return old;
+  }
+  ```
+
+## 4-4 二元运算符重载
 
     `- + `
 
@@ -111,7 +152,7 @@ cout << coor[0]; //coor.operator[](0)
 cout << coor[1]; //coor.operator[](1)
 ```
 
-## 模板函数和模板类
+## 5. 模板函数和模板类
 
 - template
 - typename
@@ -194,7 +235,7 @@ void MyArray<T>::display(){
 
 模板代码不能分离编译
 
-## 标准模板库
+## 6 标准模板库
 
 ## vector 向量
 
