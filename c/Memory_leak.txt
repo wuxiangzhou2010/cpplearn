@@ -1,0 +1,11 @@
+--leak-check=full --show-reachable=yes
+内存泄漏（Memory leak）
+不可访问内存、对象
+1. 垃圾回收机制
+2. 动态内存机制
+
+https://zh.wikipedia.org/wiki/%E7%9C%9F%E5%AF%A6%E6%A8%A1%E5%BC%8F
+缓冲区溢出
+缓冲器过读
+堆栈溢出
+无限递归

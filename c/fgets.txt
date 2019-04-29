@@ -1,0 +1,8 @@
+输入一行带空格的字符。
+char str[100];
+fgets(str,100,stdin);//stdin键盘输入
+fputs(str,stdout);//输出
+或者:
+char str[100];
+scanf("%[^\n]",str);//遇到\n换行符停止
+printf("%s\n",str);输出
